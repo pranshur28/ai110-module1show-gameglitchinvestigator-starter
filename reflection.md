@@ -4,7 +4,13 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
+<<<<<<< HEAD
 When I first ran the game, it was essentially unwinnable. The hints were backwards — when my guess was too high, the game told me to go higher, sending me in the wrong direction every time. The secret number range for "Hard" difficulty was actually 1-50, making it easier than "Normal" mode's 1-100 range. The "New Game" button didn't properly reset the game state, so the score carried over and the game could get stuck in a won/lost state. Invalid guesses (like empty input or text) still counted as attempts, wasting the player's turns unfairly.
+=======
+- What did the game look like the first time you ran it?
+- List at least two concrete bugs you noticed at the start  
+  (for example: "the hints were backwards").
+>>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 
 ---
 
@@ -22,7 +28,11 @@ I decided a bug was fixed by running the existing pytest suite (`tests/test_game
 
 ## 4. What did you learn about Streamlit and state?
 
+<<<<<<< HEAD
 The secret number kept changing because Streamlit reruns the entire Python script from top to bottom every time the user interacts with the app (clicking a button, typing input, etc.). Without `st.session_state`, any variable assigned with `random.randint()` would get a brand new random value on every rerun. I'd explain it to a friend like this: "Imagine every time you click a button, the whole page reloads and all your variables reset — `session_state` is like a sticky note that remembers values between reloads." The fix was using the `if "secret" not in st.session_state` pattern to only generate the secret number once, and making sure the "New Game" button explicitly sets a new `st.session_state.secret` when the player wants to restart.
+=======
+- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+>>>>>>> d28145213e029bd9f9244f5f8071e0985a5e266e
 
 ---
 
